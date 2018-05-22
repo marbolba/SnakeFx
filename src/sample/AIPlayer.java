@@ -6,17 +6,21 @@ import java.util.Random;
 
 public class AIPlayer
 {
+    int INPUT=4;
+    int NEURON=1;
+    int OUTPUT=1;
+
     class InputNode
     {
-        int id;
-        double val=0;//wartosc neuronu wejscia
-        double w[]; //tab poloczen
+        String id;
+        int val=0;//wartosc neuronu wejscia
+        double w[]; //tab polaczen
 
-        InputNode(int n)
+        InputNode(String n)
         {
             id=n;
             Random rand = new Random();
-            w=new double[6];
+            w=new double[6];        //jak chce ja uczyc to nie moge zawsze losowac
             for(int i=0;i<6;i++)
                 w[i]=rand.nextDouble(); //losuje poczatkowe wagi polaczen
         }
@@ -95,19 +99,11 @@ public class AIPlayer
             return out;
         }
     }
-
-//variables
+    //variables
     Robot r;
-    //inputs
-    InputNode[] i=new InputNode[4];
-    //neurons
-    NeuronNode[] n=new NeuronNode[6];
-    //outputs
-    OutputNode[] o=new OutputNode[4];
-
-
-
-
+    private InputNode[] i=new InputNode[INPUT];   //inputs
+    private NeuronNode[] n=new NeuronNode[NEURON];    //neurons
+    private OutputNode[] o=new OutputNode[OUTPUT];//outputs
     AIPlayer()
     {
         try{
@@ -119,47 +115,30 @@ public class AIPlayer
     void initNeuralNetwork()
     {
         //input
-        i[0]=new InputNode(0);//"score"
-        i[1]=new InputNode(1);//"appleDist"
-        i[2]=new InputNode(2);//"distX"
-        i[3]=new InputNode(3);//"distY"
+        i[0]=new InputNode("isL");//"obstacleLeft"
+        i[1]=new InputNode("isF");//"obstacleFront"
+        i[2]=new InputNode("isR");//"obstacleRight"
+        i[3]=new InputNode("Dir:");//"suggestedDir"
         //neuron
-        n[0]=new NeuronNode(0);
-        n[1]=new NeuronNode(1);
-        n[2]=new NeuronNode(2);
-        n[3]=new NeuronNode(3);
-        n[4]=new NeuronNode(4);
-        n[5]=new NeuronNode(5);
+        for(int i=0;i<NEURON;i++)
+            n[i]=new NeuronNode(i);
         //output
-        o[0]=new OutputNode(0);
-        o[1]=new OutputNode(1);
-        o[2]=new OutputNode(2);
-        o[3]=new OutputNode(3);
-        /*i0.print();
-        i1.print();
-        i2.print();
-        i3.print();*/
+        for(int i=0;i<OUTPUT;i++)
+            o[i]=new OutputNode(i);
     }
     void calcNetwork()
     {
         //neuron val calc
-        n[0].calcSum();
-        n[1].calcSum();
-        n[2].calcSum();
-        n[3].calcSum();
-        n[4].calcSum();
-        n[5].calcSum();
+        for(int i=0;i<NEURON;i++)
+            n[i].calcSum();
         //output val calc
-        o[0].calcSum();
-        o[1].calcSum();
-        o[2].calcSum();
-        o[3].calcSum();
+        for(int i=0;i<OUTPUT;i++)
+            o[i].calcSum();
 
         //guess output
-        //int error=calcError();
         int index=findStrongest();
         System.out.println("___STRONGEST: "+index+"___");
-        /*switch (index) //sterowanie
+        switch (index) //sterowanie
         {
             case 0:   moveLeft();
                 break;
@@ -169,7 +148,7 @@ public class AIPlayer
                 break;
             case 3:   moveDown();
                 break;
-        }*/
+        }
     }
     /*int calcError()
     {
@@ -201,13 +180,28 @@ public class AIPlayer
         }
         return index;
     }
-    void readInputs(double s,double aD,double dX,double dY)
+    /**
+     * Wejscia do mojej sieci neuronowej :
+     *
+     * Is there an obstacle to the left of the snake (1 — yes, 0 — no)
+     * Is there an obstacle in front of the snake (1 — yes, 0 — no)
+     * Is there an obstacle to the right of the snake (1 — yes, 0 — no)
+     * Suggested direction (-1 — left, 0 — forward, 1 — right)
+     * */
+    /**
+     * s->obstacleLeft
+     * aD->obstacleFront
+     * dX->obstacleRight
+     * dY->suggestedDir
+     *
+     * */
+    void readInputs(int obstacleLeft,int obstacleFront,int obstacleRight,int suggestedDir)     //wejscia do sieci neuronowej, dobrze wybrac
     {
-        i[0].val=s/10;    //experimental
-        i[1].val=aD/10;
-        i[2].val=dX/10;
-        i[3].val=dY/10;
-        System.out.println("INPUT:[s:"+s+",aD:"+aD+",dX:"+dX+",dY:"+dY+"]");
+        i[0].val=obstacleLeft;    //experimental
+        i[1].val=obstacleFront;
+        i[2].val=obstacleRight;
+        i[3].val=suggestedDir;
+        System.out.println("INPUT:[L:"+obstacleLeft+",F"+obstacleFront+",R"+obstacleRight+",dir"+suggestedDir+"]");
 
         //next step
         calcNetwork();

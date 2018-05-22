@@ -20,7 +20,7 @@ public class Board
 
     }
     int size;           //size of board: (size X size)
-    char direction;
+    char direction='n';
     Rectangle[][] Rtab;
     int rectSize;       //size of rect x==y==rectSize
     int[][] form;
@@ -91,7 +91,7 @@ public class Board
             if (form[x][y] == 0)
             {
                 form[x][y] = 2;//set first apple
-                refreshCell(grid,x,y);
+                refreshCell(x,y);
                 applePosX=x;
                 applePosY=y;
                 break;
@@ -104,7 +104,7 @@ public class Board
     {
         //if(direction=='n')
         {
-            //System.out.println("new "+dir);
+            System.out.println("nowy kierunek "+dir);
             direction=dir;          //tu sie zastanowic!!!
             switch (dir)
             {
@@ -118,14 +118,14 @@ public class Board
                             break;
             }
         }
-        /*else if((direction=='a'||direction=='d')&&(dir=='w'||dir=='s'))
+        if((direction=='a'||direction=='d')&&(dir=='w'||dir=='s'))
         {
             direction=dir;
             //System.out.print("skrecam: "+dir);
             switch (dir)
             {
                 case 'w':
-                    moveSnake(grid, posX, --posY,player);
+                    moveSnake(grid, posX, --posY,player);   //player nie uczestniczy
                     break;
                 case 's':
                     moveSnake(grid, posX, ++posY,player);
@@ -136,25 +136,25 @@ public class Board
         else if((direction=='s'||direction=='w')&&(dir=='a'||dir=='d'))
         {
             direction=dir;
-            //System.out.print("skrecam: "+dir);
+            System.out.print("skrecam: "+dir);
             switch (dir)
             {
-                case 'a':   moveSnake(grid,--posX,posY,player);
+                case 'a':   moveSnake(grid,--posX,posY,player); //player nie uczestniczy
                     break;
                 case 'd':   moveSnake(grid,++posX,posY,player);
                     break;
             }
 
-        }*/
+        }
     }
     boolean checkMovement(int i,int j,GridPane grid)
     {
-        if(i<0||j<0||i>size-1||j>size-1)
+        if(i<0||j<0||i>size-1||j>size-1)        //END OF GAME
         {
             alive=0;
             System.out.println("---KONIEC GRY---");
             System.out.println("wynik:"+score);
-            refreshScreen(grid);
+            refreshScreen();
             restartGame(grid);
             return false;
         }
@@ -163,7 +163,7 @@ public class Board
             alive=0;
             System.out.println("---KONIEC GRY---");
             System.out.println("wynik:"+score);
-            refreshScreen(grid);
+            refreshScreen();
             restartGame(grid);
             return false;
         }
@@ -178,19 +178,17 @@ public class Board
         }
         return false;
     }
-    void moveSnake(GridPane grid,int i,int j,AIPlayer player)
+    void moveSnake(GridPane grid,int i,int j,AIPlayer player)       //przesuniecie w grze
     {
         //sprawdzenie ruchu
-
-
         if(checkMovement(i,j,grid))//sets alive var
         {
             if(alive==1)
             {
-                //System.out.println("ide("+i+","+j+")");
+                System.out.println("ide("+i+","+j+")");
                 if (checkApple(i, j)) {
                     form[i][j] = 1;
-                    refreshCell(grid, i, j);
+                    refreshCell( i, j);
                     setNextApple(grid);
 
                     lastX = i;
@@ -202,29 +200,49 @@ public class Board
                     }
                     form[i][j] = 1;
                     fifo.add(new Pos(i, j));
-                    refreshCell(grid, i, j);
+                    refreshCell( i, j);
                     {
                         Pos p = fifo.getFirst();
                         //System.out.println("fifoSize:"+fifo.size()+" <"+p.x+","+p.y+">");
                         form[p.x][p.y] = 0;
-                        refreshCell(grid, p.x, p.y);
+                        refreshCell(p.x, p.y);
                         fifo.removeFirst();
                     }
 
-                }
-                player.readInputs(score, calcDist(), posX - applePosX, posY - applePosY);      //sends inputs to neural network
+                }                                                               //tutaj ustalam inputy do sieci neuronowej
+                /**
+                 * Wejscia do mojej sieci neuronowej :
+                 *
+                 * Is there an obstacle to the left of the snake (1 — yes, 0 — no)
+                 * Is there an obstacle in front of the snake (1 — yes, 0 — no)
+                 * Is there an obstacle to the right of the snake (1 — yes, 0 — no)
+                 * Suggested direction (-1 — left, 0 — forward, 1 — right)
+                 * */
+                player.readInputs(isLeft(),isFront(), isRight(), 1);      //sends inputs to neural network
             }
         }
+    }
+    public int isLeft(){
+        //if(direction)
+        return 0;
+    }
+    public int isFront(){
+        //if(direction)
+        return 0;
+    }
+    public int isRight(){
+        //if(direction)
+        return 0;
     }
     double calcDist()
     {
         return Math.sqrt( Math.pow( Math.abs(posX-applePosX),2 ) + Math.pow( Math.abs(posY-applePosY),2 ));
     }
-    boolean moveToDir(GridPane grid,AIPlayer player)
+    boolean moveToDir(GridPane grid,AIPlayer player)    //perform 1 change of direction
     {
+        System.out.println("<Player>");
         if(alive==0)
             return false;
-        //System.out.print("autonomic:");
         switch (direction)
         {
             case 'w':   moveSnake(grid,posX,--posY,player);
@@ -235,7 +253,7 @@ public class Board
                         break;
             case 'd':   moveSnake(grid,++posX,posY,player);
                         break;
-            case 'n':   break;
+            case 'n':   break;      //np reset
         }
         return true;
     }
@@ -269,12 +287,12 @@ public class Board
         }
         //System.out.println("end of initSetting");
     }
-    void refreshScreen(GridPane grid)
+    void refreshScreen()
     {
         initForm();
         initSetting();
     }
-    void refreshCell(GridPane grid,int i,int j)
+    void refreshCell(int i,int j)
     {
         if(form[i][j]==0)
         {
