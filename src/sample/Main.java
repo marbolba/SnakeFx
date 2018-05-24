@@ -22,6 +22,7 @@ public class Main extends Application
     public GridPane grid;
     public Board board;
     int posX,posY;
+    int boartSize=30;
     int speed=90;//speed of game  //1s
     public Scene scena;
     public AIPlayer player;
@@ -31,7 +32,7 @@ public class Main extends Application
             while(true){
             try {
                 Thread.sleep(speed); //speed of game
-                if(!board.moveToDir(grid,player))//autonimic
+                if(!board.moveToDir(grid,player))//automatic move every speed'
                     delayer.join();             //recursive
             } catch (InterruptedException ex) {
             }
@@ -41,9 +42,9 @@ public class Main extends Application
      * Listener nasluchujacy na gracza
      *
      * */
-    Thread listenerPlayer = new Thread () {
+    Thread listener = new Thread () {
         //threads memory
-        char dir='w';
+        char dir;
         public void run () {                    //GLOWNA PETLA PROGRAMU
             scena.setOnKeyPressed(new EventHandler<KeyEvent>() {        //ON KEY PRESSED LISTEN
                 @Override
@@ -98,50 +99,6 @@ public class Main extends Application
             });
         }
     };
-    Thread listenerAI = new Thread () {
-        public void run () {
-            scena.setOnKeyPressed(new EventHandler<KeyEvent>() {        //ON KEY PRESSED LISTEN
-                @Override
-                public void handle(KeyEvent event) {
-                    switch (event.getCode()) {
-                        case UP: {
-                            delayer.interrupt();
-                            board.tryMovement(grid,'w',player);
-                            try {
-                                delayer.start();
-                            } catch (Exception ex) {}
-                            break;
-                        }
-                        case DOWN: {
-                            delayer.interrupt();
-                            board.tryMovement(grid,'s',player);
-                            try {
-                                delayer.start();
-                            } catch (Exception ex) {}
-                            break;
-                        }
-                        case LEFT: {
-                            delayer.interrupt();
-                            board.tryMovement(grid,'a',player);
-                            try {
-                                delayer.start();
-                            } catch (Exception ex) {}
-                            break;
-                        }
-                        case RIGHT: {
-                            delayer.interrupt();
-                            board.tryMovement(grid,'d',player);
-                            try {
-                                delayer.start();
-                            } catch (Exception ex) {}
-                            break;
-                        }
-                    }
-                }
-            });
-        }
-    };
-
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -155,37 +112,11 @@ public class Main extends Application
     }
     void startGame()
     {
-        //String s=null;//tmp string
-        //boolean gg=false;
+        String s=null;//tmp string
+        boolean gg=false;
 
-        {           //temporary
-            listenerAI.start();
-            System.out.println("listener loaded...");
-        }
-        /*while(!gg) {
-            int a;
-            Scanner S=new Scanner(System.in);
-            System.out.println("player || ai");
-            try {
-                s = S.nextLine();
-            } catch (Exception e) {
-            }
-            if (s.toLowerCase().equals("player"))
-            {
-                gg=true;
-                listenerPlayer.start();
-                System.out.println("done");
-            }
-
-            if (s.toLowerCase().equals("ai"))
-            {
-                gg=true;
-                listenerAI.start();
-                System.out.println("done");
-            }
-        }*/
-
-
+        board.control=1;        //  1-player    2-AI
+        listener.start();           //listener
         delayer.start();
     }
     void initBoard()
@@ -195,7 +126,7 @@ public class Main extends Application
         grid.setVgap(1);
         grid.setHgap(1);
 
-        board=new Board(30,grid);
+        board=new Board(boartSize,grid);
         System.out.println("init board...");
         board.showBoard(grid);
 

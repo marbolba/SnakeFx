@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Board.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$2$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$2.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$3.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/sample.fxml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$InputNode.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$InputNode.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$NeuronNode.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$NeuronNode.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$OutputNode.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer$OutputNode.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/AIPlayer.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Board.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Board.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$1.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Main$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$2$1.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Main$2$1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$2.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Main$2.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main$3.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Main$3.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/Snake/sample/Main.class" />
       <change beforePath="$PROJECT_DIR$/src/sample/AIPlayer.java" afterPath="$PROJECT_DIR$/src/sample/AIPlayer.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Board.java" afterPath="$PROJECT_DIR$/src/sample/Board.java" />
       <change beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/sample/sample.fxml" afterPath="$PROJECT_DIR$/src/sample/SnakeGui.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,33 +72,31 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="Board.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+            <state relative-caret-position="273">
+              <caret line="150" column="35" lean-forward="true" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
               <folding>
                 <element signature="method#Board#0;class#Board#0" expanded="false" />
                 <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-                <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
                 <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-                <element signature="e#7434#7435#0" expanded="true" />
-                <element signature="e#7463#7464#0" expanded="true" />
+                <element signature="e#6780#6781#0" expanded="true" />
+                <element signature="e#6809#6810#0" expanded="true" />
                 <element signature="method#initForm#0;class#Board#0" expanded="false" />
                 <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-                <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
                 <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AIPlayer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AIPlayer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/AIPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="156" column="8" lean-forward="false" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+            <state relative-caret-position="2310">
+              <caret line="112" column="12" lean-forward="false" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -106,16 +105,12 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+            <state relative-caret-position="924">
+              <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#719#1059#0" expanded="true" />
-                <element signature="e#1058#1059#0" expanded="true" />
-                <element signature="e#3550#5279#0" expanded="true" />
-                <element signature="e#5278#5279#0" expanded="true" />
-                <element signature="e#6938#6939#0" expanded="true" />
-                <element signature="e#6966#6967#0" expanded="true" />
+                <element signature="e#4568#4569#0" expanded="true" />
+                <element signature="e#4596#4597#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,14 +118,14 @@
       </file>
       <file leaf-file-name="SnakeGui.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/SnakeGui.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="147">
               <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -167,6 +162,8 @@
       <find>show</find>
       <find>player</find>
       <find>readInputs</find>
+      <find>NEURON</find>
+      <find>Player</find>
     </findStrings>
     <replaceStrings>
       <replace>i0</replace>
@@ -192,18 +189,18 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/AIPlayer.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/Board.java" />
-        <option value="$PROJECT_DIR$/src/sample/AIPlayer.java" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2391" />
-    <option name="y" value="49" />
+    <option name="x" value="2592" />
+    <option name="y" value="30" />
     <option name="width" value="1618" />
-    <option name="height" value="1248" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -224,6 +221,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,9 +247,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,20 +462,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26369545" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2782101" sideWeight="0.6703755" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961932" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.110246435" sideWeight="0.6703755" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3983287" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990878" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -490,6 +486,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32961932" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -545,18 +542,110 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/sample/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
+            <element signature="method#checkApple#0;class#Board#0" expanded="false" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
+            <element signature="method#initForm#0;class#Board#0" expanded="false" />
+            <element signature="method#initSetting#0;class#Board#0" expanded="false" />
+            <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2352">
+          <caret line="112" column="12" lean-forward="false" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="56" column="46" lean-forward="true" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SnakeGui.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4599">
+          <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding>
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
+            <element signature="method#checkApple#0;class#Board#0" expanded="false" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
+            <element signature="method#initForm#0;class#Board#0" expanded="false" />
+            <element signature="method#initSetting#0;class#Board#0" expanded="false" />
+            <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="903">
+          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SnakeGui.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/AIPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3276">
+          <caret line="156" column="8" lean-forward="false" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -567,12 +656,8 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -583,12 +668,8 @@
           <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -608,13 +689,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -626,12 +705,8 @@
           <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -643,13 +718,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -669,12 +742,8 @@
           <caret line="105" column="18" lean-forward="false" selection-start-line="105" selection-start-column="18" selection-end-line="105" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -694,13 +763,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -712,12 +779,8 @@
           <caret line="42" column="41" lean-forward="false" selection-start-line="42" selection-start-column="41" selection-end-line="42" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -729,13 +792,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -755,12 +816,8 @@
           <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -772,13 +829,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -798,12 +853,8 @@
           <caret line="87" column="21" lean-forward="false" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -815,13 +866,11 @@
           <folding>
             <element signature="method#Board#0;class#Board#0" expanded="false" />
             <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
             <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#initForm#0;class#Board#0" expanded="false" />
             <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
             <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
           </folding>
         </state>
@@ -841,24 +890,20 @@
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SnakeGui.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java">
@@ -909,61 +954,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="794" column="29" lean-forward="false" selection-start-line="794" selection-start-column="29" selection-end-line="794" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="55" column="45" lean-forward="false" selection-start-line="55" selection-start-column="45" selection-end-line="55" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#719#1059#0" expanded="true" />
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#3550#5279#0" expanded="true" />
-            <element signature="e#5278#5279#0" expanded="true" />
-            <element signature="e#6938#6939#0" expanded="true" />
-            <element signature="e#6966#6967#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/SnakeGui.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
-          <folding>
-            <element signature="method#Board#0;class#Board#0" expanded="false" />
-            <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
-            <element signature="method#checkMovement#0;class#Board#0" expanded="false" />
-            <element signature="method#checkApple#0;class#Board#0" expanded="false" />
-            <element signature="e#7434#7435#0" expanded="true" />
-            <element signature="e#7463#7464#0" expanded="true" />
-            <element signature="method#initForm#0;class#Board#0" expanded="false" />
-            <element signature="method#initSetting#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshScreen#0;class#Board#0" expanded="false" />
-            <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
-          </folding>
-        </state>
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/AIPlayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="156" column="8" lean-forward="false" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+        <state relative-caret-position="2310">
+          <caret line="112" column="12" lean-forward="false" selection-start-line="112" selection-start-column="6" selection-end-line="112" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="56" column="46" lean-forward="false" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4568#4569#0" expanded="true" />
+            <element signature="e#4596#4597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="150" column="35" lean-forward="true" selection-start-line="150" selection-start-column="35" selection-end-line="150" selection-end-column="35" />
+          <folding>
+            <element signature="method#Board#0;class#Board#0" expanded="false" />
+            <element signature="method#setNextApple#0;class#Board#0" expanded="false" />
+            <element signature="method#checkApple#0;class#Board#0" expanded="false" />
+            <element signature="e#6780#6781#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
+            <element signature="method#initForm#0;class#Board#0" expanded="false" />
+            <element signature="method#initSetting#0;class#Board#0" expanded="false" />
+            <element signature="method#refreshCell#0;class#Board#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

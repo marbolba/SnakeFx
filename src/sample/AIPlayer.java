@@ -20,14 +20,17 @@ public class AIPlayer
         {
             id=n;
             Random rand = new Random();
-            w=new double[6];        //jak chce ja uczyc to nie moge zawsze losowac
-            for(int i=0;i<6;i++)
+            w=new double[INPUT];        //jak chce ja uczyc to nie moge zawsze losowac
+            for(int i=0;i<INPUT;i++)
                 w[i]=rand.nextDouble(); //losuje poczatkowe wagi polaczen
         }
         @Override
         public String toString()
         {
-            String out="I."+id+":w["+w[0]+" , "+w[1]+" , "+w[2]+" , "+w[3]+" , "+w[4]+" , "+w[5]+"]";
+            String out="I."+id+":w[";
+            for(int i=0;i<INPUT;i++)
+                out+=w[i]+" ,";
+            out+="]";
             return out;
         }
     }
@@ -65,11 +68,14 @@ public class AIPlayer
         @Override
         public String toString()
         {
-            String out=" N."+id+"(b:"+bias+"):w["+w[0]+" , "+w[1]+" , "+w[2]+" , "+w[3]+"]";
+            String out="N."+id+":w[";
+            for(int i=0;i<NEURON;i++)
+                out+=w[i]+" ,";
+            out+="]";
             return out;
         }
     }
-    class OutputNode
+    class OutputNode            //not updated
     {
         int id;
         double val=0;

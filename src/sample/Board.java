@@ -26,6 +26,7 @@ public class Board
     int[][] form;
     int alive;
     int score;
+    public int control=1;      //1- player 2-AI
     /** form:
      * 0-nothing
      * 1-snake
@@ -100,71 +101,49 @@ public class Board
 
 
     }
+    /**
+     * NA WEJSCIU JUZ DOSTAJE DOBRE RUCHY
+     * wykonuje zmiane kierunku
+     * */
     void tryMovement(GridPane grid,char dir,AIPlayer player)//do boolean
     {
-        //if(direction=='n')
-        {
-            System.out.println("nowy kierunek "+dir);
-            direction=dir;          //tu sie zastanowic!!!
-            switch (dir)
-            {
-                case 'w':   moveSnake(grid,posX,--posY,player);
-                            break;
-                case 's':   moveSnake(grid,posX,++posY,player);
-                            break;
-                case 'a':   moveSnake(grid,--posX,posY,player);
-                            break;
-                case 'd':   moveSnake(grid,++posX,posY,player);
-                            break;
-            }
-        }
-        if((direction=='a'||direction=='d')&&(dir=='w'||dir=='s'))
-        {
-            direction=dir;
-            //System.out.print("skrecam: "+dir);
-            switch (dir)
-            {
-                case 'w':
-                    moveSnake(grid, posX, --posY,player);   //player nie uczestniczy
-                    break;
-                case 's':
-                    moveSnake(grid, posX, ++posY,player);
-                    break;
-            }
 
-        }
-        else if((direction=='s'||direction=='w')&&(dir=='a'||dir=='d'))
-        {
-            direction=dir;
-            System.out.print("skrecam: "+dir);
-            switch (dir)
-            {
-                case 'a':   moveSnake(grid,--posX,posY,player); //player nie uczestniczy
-                    break;
-                case 'd':   moveSnake(grid,++posX,posY,player);
-                    break;
-            }
 
+        System.out.println("nowy kierunek " + dir);
+        direction = dir;          //tu sie zastanowic!!!
+        switch (dir)
+        {
+            case 'w':
+                moveSnake(grid, posX, --posY, player);
+                break;
+            case 's':
+                moveSnake(grid, posX, ++posY, player);
+                break;
+            case 'a':
+                moveSnake(grid, --posX, posY, player);
+                break;
+            case 'd':
+                moveSnake(grid, ++posX, posY, player);
+                break;
         }
     }
+    /**
+     *  sprawdza czy spelnione sa warunku na koniec gry:
+     *  -wejscie w sciane
+     *  -wejscie w samego siebie
+     * */
     boolean checkMovement(int i,int j,GridPane grid)
     {
-        if(i<0||j<0||i>size-1||j>size-1)        //END OF GAME
+        if(i<0||j<0||i>size-1||j>size-1)
         {
-            alive=0;
             System.out.println("---KONIEC GRY---");
             System.out.println("wynik:"+score);
-            refreshScreen();
-            restartGame(grid);
             return false;
         }
         else if(form[i][j]==1)
         {
-            alive=0;
             System.out.println("---KONIEC GRY---");
             System.out.println("wynik:"+score);
-            refreshScreen();
-            restartGame(grid);
             return false;
         }
         return true;
@@ -178,48 +157,59 @@ public class Board
         }
         return false;
     }
+    /**
+     * Faktycznie wykonuje ruch na pozycje i,j
+     * */
     void moveSnake(GridPane grid,int i,int j,AIPlayer player)       //przesuniecie w grze
     {
         //sprawdzenie ruchu
-        if(checkMovement(i,j,grid))//sets alive var
+        if(!checkMovement(i,j,grid))     //sets alive var
+        {   //end of game
+            alive=0;
+            refreshScreen();
+            restartGame(grid);
+        }
+
+        if(alive==1)
         {
-            if(alive==1)
-            {
-                System.out.println("ide("+i+","+j+")");
-                if (checkApple(i, j)) {
-                    form[i][j] = 1;
-                    refreshCell( i, j);
-                    setNextApple(grid);
+            /**
+             * checks apple, refreshes tail
+             * */
+            System.out.println("ide("+i+","+j+")");
+            if (checkApple(i, j)) {
+                form[i][j] = 1;
+                refreshCell( i, j);
+                setNextApple(grid);
 
-                    lastX = i;
-                    lastY = j;
-                } else {
-                    if (lastX != 0 || lastY != 0) {
-                        fifo.add(new Pos(lastX, lastY));
-                        lastX = lastY = 0;
-                    }
-                    form[i][j] = 1;
-                    fifo.add(new Pos(i, j));
-                    refreshCell( i, j);
-                    {
-                        Pos p = fifo.getFirst();
-                        //System.out.println("fifoSize:"+fifo.size()+" <"+p.x+","+p.y+">");
-                        form[p.x][p.y] = 0;
-                        refreshCell(p.x, p.y);
-                        fifo.removeFirst();
-                    }
+                lastX = i;
+                lastY = j;
+            } else {
+                if (lastX != 0 || lastY != 0) {
+                    fifo.add(new Pos(lastX, lastY));
+                    lastX = lastY = 0;
+                }
+                form[i][j] = 1;
+                fifo.add(new Pos(i, j));
+                refreshCell( i, j);
+                {
+                    Pos p = fifo.getFirst();
+                    //System.out.println("fifoSize:"+fifo.size()+" <"+p.x+","+p.y+">");
+                    form[p.x][p.y] = 0;
+                    refreshCell(p.x, p.y);
+                    fifo.removeFirst();
+                }
 
-                }                                                               //tutaj ustalam inputy do sieci neuronowej
-                /**
-                 * Wejscia do mojej sieci neuronowej :
-                 *
-                 * Is there an obstacle to the left of the snake (1 — yes, 0 — no)
-                 * Is there an obstacle in front of the snake (1 — yes, 0 — no)
-                 * Is there an obstacle to the right of the snake (1 — yes, 0 — no)
-                 * Suggested direction (-1 — left, 0 — forward, 1 — right)
-                 * */
+            }                                                               //tutaj ustalam inputy do sieci neuronowej
+            /**
+             * Wejscia do mojej sieci neuronowej :
+             *
+             * Is there an obstacle to the left of the snake (1 — yes, 0 — no)
+             * Is there an obstacle in front of the snake (1 — yes, 0 — no)
+             * Is there an obstacle to the right of the snake (1 — yes, 0 — no)
+             * Suggested direction (-1 — left, 0 — forward, 1 — right)
+             * */
+            if(control==2)      //if control is AI
                 player.readInputs(isLeft(),isFront(), isRight(), 1);      //sends inputs to neural network
-            }
         }
     }
     public int isLeft(){
@@ -238,9 +228,12 @@ public class Board
     {
         return Math.sqrt( Math.pow( Math.abs(posX-applePosX),2 ) + Math.pow( Math.abs(posY-applePosY),2 ));
     }
+    /**
+     * Performing auto moving
+     * */
     boolean moveToDir(GridPane grid,AIPlayer player)    //perform 1 change of direction
     {
-        System.out.println("<Player>");
+        System.out.print("[auto]-");
         if(alive==0)
             return false;
         switch (direction)
